@@ -1,5 +1,6 @@
 language: bash
 install:
+  - apt-get install bc
   - ./build/install.sh
 script:
   - ./build.sh
