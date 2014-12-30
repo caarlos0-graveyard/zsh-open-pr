@@ -1,7 +1,8 @@
 language: bash
 install:
+  - sudo apt-get install bc
   - ./build/install.sh
 script:
-  - ./build/build.sh
+  - ./build.sh
 notifications:
   email: false
