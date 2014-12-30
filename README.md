@@ -101,6 +101,6 @@ And hit `open-pr` on your repositories.
 You can also alias it:
 
 ```sh
-$ git config --global alias.pr '!zsh -ic git-open-pr'
+$ git config --global alias.pr '!zsh -ic open-pr'
 $ git pr
 ```
