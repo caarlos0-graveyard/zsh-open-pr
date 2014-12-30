@@ -3,15 +3,9 @@ source "./tests/test-helper.sh"
 setup() {
   uname_value="$1"
   open() {
-    if [ "$uname_value" != "Darwin" ]; then
-      assert true false
-    fi
     exit 0
   }
   xdg-open() {
-    if [ "$uname_value" = "Darwin" ]; then
-      assert true false
-    fi
     exit 0
   }
   uname() {
@@ -21,11 +15,11 @@ setup() {
 }
 
 # tests open on osx
-setup "Darwin" "open"
+setup "Darwin"
 assert "_open on-osx"
 
 # test open on linux
-setup "Linux" "xdg-open"
+setup "Linux"
 assert "_open on-linux"
 
 unset -f uname
