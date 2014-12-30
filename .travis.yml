@@ -2,6 +2,6 @@ language: bash
 install:
   - ./build/install.sh
 script:
-  - ./build/build.sh
+  - ./build.sh
 notifications:
   email: false

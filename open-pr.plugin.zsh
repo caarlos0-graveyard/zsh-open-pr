@@ -5,6 +5,15 @@ _get_repo() {
   echo "$1" | sed -e "s/.*github.com[:/]\(.*\)\.git.*/\1/"
 }
 
+_open() {
+  set -x
+  if [ "$(uname -s)" = "Darwin" ]; then
+    open "$1" 2> /dev/null
+  else
+    xdg-open "$1" # &> /dev/null
+  fi
+}
+
 open-pr() {
   local upstream=$(git config --get remote.upstream.url)
   local origin=$(git config --get remote.origin.url)
@@ -19,5 +28,5 @@ open-pr() {
     local upstream_name=$(_get_repo "$upstream" | cut -f1 -d'/')
     local url="$pr_url/$upstream_name:$target...$origin_name:$branch"
   fi
-  open "$url" 2> /dev/null || xdg-open "$url" &> /dev/null
+  _open "$url"
 }
