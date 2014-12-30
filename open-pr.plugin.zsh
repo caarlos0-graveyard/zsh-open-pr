@@ -6,7 +6,6 @@ _get_repo() {
 }
 
 _open() {
-  set -x
   if [ "$(uname -s)" = "Darwin" ]; then
     open "$1" 2> /dev/null
   else
