@@ -1,5 +1,8 @@
 #!/bin/bash
 source "./tests/test-helper.sh"
+_mktemp() {
+  mktemp -dt fake-repo.XXXXXXXXXX
+}
 
 init_repo() {
   local dir="$1"
@@ -16,7 +19,7 @@ add_upstream() {
 }
 
 # only origin, PR to master
-dir=$(mktemp -dt zsh-open-pr)
+dir=$(_mktemp)
 init_repo "$dir"
 cd "$dir"
 assert "_build_url" \
@@ -24,7 +27,7 @@ assert "_build_url" \
 rm -rf "$dir"
 
 # only origin, PR to blah
-dir=$(mktemp -dt zsh-open-pr)
+dir=$(_mktemp)
 init_repo "$dir"
 cd "$dir"
 assert "_build_url blah" \
@@ -32,7 +35,7 @@ assert "_build_url blah" \
 rm -rf "$dir"
 
 # origin and upstream, PR to master
-dir=$(mktemp -dt zsh-open-pr)
+dir=$(_mktemp)
 init_repo "$dir"
 add_upstream "$dir"
 cd "$dir"
@@ -41,7 +44,7 @@ assert "_build_url" \
 rm -rf "$dir"
 
 # origin and upstream, PR to blah
-dir=$(mktemp -dt zsh-open-pr)
+dir=$(_mktemp)
 init_repo "$dir"
 add_upstream "$dir"
 cd "$dir"
