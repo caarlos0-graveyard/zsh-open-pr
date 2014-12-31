@@ -3,6 +3,8 @@ zsh-open-pr [![Build Status](https://travis-ci.org/caarlos0/zsh-open-pr.svg?bran
 
 ZSH plugin to open pull requests from command line.
 
+![gif showing zsh-open-pr in action](https://dl.dropboxusercontent.com/u/247142/projects/git-open-pr.mov.gif)
+
 ## What it does
 
 Basically, when you call `open-pr`, the function will verify if you are working
