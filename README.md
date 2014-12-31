@@ -124,4 +124,4 @@ gpr
 ## Contributing
 
 The project is linted with Shellcheck and have unit tests. Please, take a look
-at them and execute `./build.sh` to make sure it all works well. :beers"
+at them and execute `./build.sh` to make sure it all works well. :beers:
