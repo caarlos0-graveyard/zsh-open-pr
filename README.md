@@ -106,3 +106,22 @@ You can also alias it:
 $ git config --global alias.pr '!zsh -ic open-pr'
 $ git pr
 ```
+
+I like more the following approach:
+
+```sh
+gpr() {
+  git push origin HEAD && open-pr "$*"
+}
+```
+
+So I can `git push` and `open-pr` in a single, three letters command:
+
+```sh
+gpr
+```
+
+## Contributing
+
+The project is linted with Shellcheck and have unit tests. Please, take a look
+at them and execute `./build.sh` to make sure it all works well. :beers"
