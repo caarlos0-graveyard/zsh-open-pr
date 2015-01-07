@@ -2,6 +2,7 @@
 set -eo pipefail
 
 _get_repo() {
+  # shellcheck disable=SC2001
   echo "$1" | sed -e "s/.*github.com[:/]\(.*\)\.git.*/\1/"
 }
 
