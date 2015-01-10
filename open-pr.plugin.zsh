@@ -1,5 +1,4 @@
 #!/bin/zsh
-set -eo pipefail
 
 _get_repo() {
   # shellcheck disable=SC2001
