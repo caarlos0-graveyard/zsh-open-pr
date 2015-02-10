@@ -5,14 +5,6 @@ _get_repo() {
   echo "$1" | sed -e "s/.*github.com[:/]\(.*\)\.git.*/\1/"
 }
 
-_open() {
-  if [ "$(uname -s)" = "Darwin" ]; then
-    open "$1" 2> /dev/null
-  else
-    xdg-open "$1" &> /dev/null
-  fi
-}
-
 _build_url() {
   local upstream=$(git config --get remote.upstream.url)
   local origin=$(git config --get remote.origin.url)
@@ -31,5 +23,9 @@ _build_url() {
 
 open-pr() {
   local url=$(_build_url "$*")
-  _open "$url"
+  if [ "$(uname -s)" = "Darwin" ]; then
+    open "$url" 2> /dev/null
+  else
+    xdg-open "$url" &> /dev/null
+  fi
 }
