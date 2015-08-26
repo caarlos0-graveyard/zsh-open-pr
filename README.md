@@ -98,6 +98,10 @@ $ open-pr develop
 $ antigen bundle caarlos0/zsh-open-pr
 ```
 
+## Installing using zgen
+
+Add `zgen load caarlos0/zsh-open-pr` to your `.zshrc` where you're loading your other plugins.
+
 And hit `open-pr` on your repositories.
 
 You can also alias it:
