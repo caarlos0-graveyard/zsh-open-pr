@@ -92,6 +92,12 @@ $ open-pr develop
 # will browse https://github.com/caarlos0/zsh-open-pr/compare/develop...random-user:random-feature
 ```
 
+## Install using [antibody](http://getantibody.github.io/)
+
+```sh
+$ antibody bundle caarlos0/zsh-open-pr
+```
+
 ## Install using antigen
 
 ```sh
@@ -102,7 +108,9 @@ $ antigen bundle caarlos0/zsh-open-pr
 
 Add `zgen load caarlos0/zsh-open-pr` to your `.zshrc` where you're loading your other plugins.
 
-And hit `open-pr` on your repositories.
+## Usage
+
+Just hit `open-pr` on your repositories.
 
 You can also alias it:
 
@@ -111,7 +119,7 @@ $ git config --global alias.pr '!zsh -ic open-pr'
 $ git pr
 ```
 
-I like more the following approach:
+But I like the following approach more:
 
 ```sh
 gpr() {
@@ -122,7 +130,7 @@ gpr() {
 So I can `git push` and `open-pr` in a single, three letters command:
 
 ```sh
-gpr
+$ gpr
 ```
 
 ## Contributing
