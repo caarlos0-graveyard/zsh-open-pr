@@ -92,6 +92,12 @@ $ open-pr develop
 # will browse https://github.com/caarlos0/zsh-open-pr/compare/develop...random-user:random-feature
 ```
 
+## Install using [antibody](http://getantibody.github.io/)
+
+```sh
+$ antibody bundle caarlos0/zsh-open-pr
+```
+
 ## Install using antigen
 
 ```sh
