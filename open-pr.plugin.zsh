@@ -1,6 +1,6 @@
 #!/bin/sh
 _get_repo() {
-  echo "$1" | sed -e "s/.*github.com[:/]\(.*\)\.git.*/\1/"
+  echo "$1" | sed -e "s/.git$//" -e "s/.*github.com[:/]\(.*\)/\1/"
 }
 
 _build_url() {
