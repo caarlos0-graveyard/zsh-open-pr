@@ -1,4 +1,7 @@
 language: bash
+os:
+  - linux
+  - osx
 install:
   - sudo apt-get install bc
   - ./build/install.sh
