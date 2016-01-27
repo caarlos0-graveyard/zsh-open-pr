@@ -4,6 +4,7 @@ _get_repo() {
 }
 
 _build_url() {
+  # shellcheck disable=SC2039
   local upstream origin branch repo pr_url target
   upstream="$(git config --get remote.upstream.url)"
   origin="$(git config --get remote.origin.url)"
@@ -15,6 +16,7 @@ _build_url() {
   if [ -z "$upstream" ]; then
     echo "$pr_url/$target...$branch"
   else
+    # shellcheck disable=SC2039
     local origin_name upstream_name
     origin_name="$(echo "$repo" | cut -f1 -d'/')"
     upstream_name="$(_get_repo "$upstream" | cut -f1 -d'/')"
@@ -22,7 +24,9 @@ _build_url() {
   fi
 }
 
+# shellcheck disable=SC2039
 open-pr() {
+  # shellcheck disable=SC2039
   local url
   url="$(_build_url "$*")"
   if [ "$(uname -s)" = "Darwin" ]; then
