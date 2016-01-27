@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=1091
 source "./tests/test-helper.sh"
 
 assert "_get_repo git@github.com:caarlos0/zsh-open-pr.git" \
