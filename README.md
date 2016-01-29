@@ -106,7 +106,9 @@ $ antigen bundle caarlos0/zsh-open-pr
 
 ## Installing using zgen
 
-Add `zgen load caarlos0/zsh-open-pr` to your `.zshrc` where you're loading your other plugins.
+```console
+$ zgen load caarlos0/zsh-open-pr
+```
 
 ## Usage
 
