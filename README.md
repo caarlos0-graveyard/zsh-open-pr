@@ -47,7 +47,7 @@ https://github.com/target-remote/repo/compare/master...origin:random-feature
 
 For example, when you work on your own project:
 
-```sh
+```console
 $ git remote -v
 origin  git@github.com:caarlos0/zsh-open-pr.git (fetch)
 origin  git@github.com:caarlos0/zsh-open-pr.git (push)
@@ -66,7 +66,7 @@ $ open-pr
 
 Working on a fork:
 
-```sh
+```console
 $ git remote -v
 origin  git@github.com:random-user/zsh-open-pr.git (fetch)
 origin  git@github.com:random-user/zsh-open-pr.git (push)
@@ -87,20 +87,20 @@ $ open-pr
 
 Previous example, but to a `develop` branch, for instance:
 
-```sh
+```console
 $ open-pr develop
 # will browse https://github.com/caarlos0/zsh-open-pr/compare/develop...random-user:random-feature
 ```
 
 ## Install using [antibody](http://getantibody.github.io/)
 
-```sh
+```console
 $ antibody bundle caarlos0/zsh-open-pr
 ```
 
 ## Install using antigen
 
-```sh
+```console
 $ antigen bundle caarlos0/zsh-open-pr
 ```
 
@@ -114,14 +114,14 @@ Just hit `open-pr` on your repositories.
 
 You can also alias it:
 
-```sh
-$ git config --global alias.pr '!zsh -ic open-pr'
+```console
+$ git config --global alias.pr '!zsh -ic \"open-pr $*\"'
 $ git pr
 ```
 
 But I like the following approach more:
 
-```sh
+```console
 gpr() {
   git push origin HEAD && open-pr "$*"
 }
@@ -129,7 +129,7 @@ gpr() {
 
 So I can `git push` and `open-pr` in a single, three letters command:
 
-```sh
+```console
 $ gpr
 ```
 
