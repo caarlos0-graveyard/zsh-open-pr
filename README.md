@@ -117,7 +117,7 @@ gpr() {
 }
 ```
 
-So I can `git push` and `open_pr` in a single, three letters command:
+So I can `git push` and `git open-pr` in a single, three letters command:
 
 ```console
 $ gpr
