@@ -5,4 +5,4 @@
 # shellcheck disable=1091
 source assert.sh
 # shellcheck disable=1091
-source git-open-pr
+source git-open-pr.sh
