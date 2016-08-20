@@ -6,7 +6,7 @@ install:
   - ./build/install.sh
 script:
   - ./build/build.sh
-  - ./tests/build.sh
+  - ./tests/test.sh
 notifications:
   email: false
 sudo: required
