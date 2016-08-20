@@ -25,7 +25,7 @@ _build_url() {
 }
 
 # shellcheck disable=SC2039
-open-pr() {
+__open_pr() {
   # shellcheck disable=SC2039
   local url
   url="$(_build_url "$*")"
@@ -35,3 +35,7 @@ open-pr() {
     xdg-open "$url" > /dev/null 2> /dev/null
   fi
 }
+
+# shellcheck disable=SC2128
+test "$0" != "$BASH_SOURCE" || echo "$ZSH_EVAL_CONTEXT" | egrep ":file$" ||
+  __open_pr "$@"
