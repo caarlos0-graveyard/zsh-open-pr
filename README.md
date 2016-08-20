@@ -95,29 +95,17 @@ $ open-pr develop
 ## Install using [antibody](http://getantibody.github.io/)
 
 ```console
-$ antibody bundle caarlos0/zsh-open-pr
-```
-
-## Install using antigen
-
-```console
-$ antigen bundle caarlos0/zsh-open-pr
-```
-
-## Installing using zgen
-
-```console
-$ zgen load caarlos0/zsh-open-pr
+$ antibody bundle caarlos0/zsh-open-pr kind:path
 ```
 
 ## Usage
 
-Just hit `open_pr` on your repositories.
+Just hit `git open-pr` on your repositories.
 
 You can also alias it:
 
 ```console
-$ git config --global alias.pr '!zsh -ic \"open_pr $*\"'
+$ git config --global alias.pr open-pr
 $ git pr
 ```
 
@@ -125,7 +113,7 @@ But I like the following approach more:
 
 ```console
 gpr() {
-  git push origin HEAD && open_pr "$*"
+  git push origin HEAD && git open-pr "$@"
 }
 ```
 
@@ -134,17 +122,6 @@ So I can `git push` and `open_pr` in a single, three letters command:
 ```console
 $ gpr
 ```
-
-### PATH
-
-You can, instead of sourcing, add the plugin to your path, so git will
-automatically detect it. In the latest versions of antibody you can do that:
-
-```console
-antibody bundle 'caarlos0/zsh-open-pr kind:path'
-```
-
-And then just call `git open-pr`.
 
 ## Contributing
 
