@@ -36,5 +36,5 @@ __open_pr() {
   fi
 }
 
-test "$0" != "$BASH_SOURCE" || echo "$ZSH_EVAL_CONTEXT" | egrep ":file$" ||
+test "$0" != "$BASH_SOURCE[*]" || echo "$ZSH_EVAL_CONTEXT" | egrep ":file$" ||
   __open_pr "$@"
