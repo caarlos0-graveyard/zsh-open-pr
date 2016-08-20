@@ -36,5 +36,6 @@ __open_pr() {
   fi
 }
 
-test "$0" != "$BASH_SOURCE[*]" || echo "$ZSH_EVAL_CONTEXT" | egrep ":file$" ||
+# shellcheck disable=SC2128
+test "$0" != "$BASH_SOURCE" || echo "$ZSH_EVAL_CONTEXT" | egrep ":file$" ||
   __open_pr "$@"
