@@ -5,8 +5,8 @@ os:
 install:
   - ./build/install.sh
 script:
-  - ./buil/buil.sh
-  - ./test/build.sh
+  - ./build/build.sh
+  - ./tests/build.sh
 notifications:
   email: false
 sudo: required
