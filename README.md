@@ -1,9 +1,9 @@
-open-pr [![Build Status](https://travis-ci.org/caarlos0/open-pr.svg?branch=master)](https://travis-ci.org/caarlos0/open-pr)
+open-pr [![Build Status](https://travis-ci.org/caarlos0/zsh-open-pr.svg?branch=master)](https://travis-ci.org/caarlos0/zsh-open-pr)
 ==================
 
 Open pull requests from command line.
 
-![gif showing open-pr in action](https://dl.dropboxusercontent.com/u/247142/projects/git-open-pr.mov.gif)
+![gif showing open-pr in action](/git-open-pr.mov.gif)
 
 ## What it does
 
