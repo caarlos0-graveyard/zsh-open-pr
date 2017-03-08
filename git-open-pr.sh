@@ -12,6 +12,7 @@ _build_url() {
   repo="$(_get_repo "$origin")"
   pr_url="https://github.com/$repo/pull/new"
   target="$1"
+  test -z "$target" && target=$(git for-each-ref --format='%(upstream:short)' "$(git symbolic-ref -q HEAD)" | cut -d '/' -f 2)
   test -z "$target" && target="master"
   if [ -z "$upstream" ]; then
     echo "$pr_url/$target...$branch"
