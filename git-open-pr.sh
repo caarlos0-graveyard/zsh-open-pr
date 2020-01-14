@@ -1,7 +1,8 @@
 #!/bin/sh
 _get_repo() {
+  # shellcheck disable=SC2039
   local repo_domain
-  repo_domain="$(echo $1 | awk -F[/:] '{print $4}')"
+  repo_domain="$(echo "$1" | awk -F[/:] '{print $4}')"
   echo "$1" | sed -e "s/.*$repo_domain[:/]\(.*\)/\1/"
 }
 
