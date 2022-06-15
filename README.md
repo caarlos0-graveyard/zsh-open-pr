@@ -98,6 +98,15 @@ $ git open-pr develop
 $ antibody bundle caarlos0/open-pr kind:path
 ```
 
+## Install using [Fig](https://fig.io)
+
+Fig adds apps, shortcuts, and autocomplete to your existing terminal.
+
+
+Install `zsh-open-pr` in just one click.
+
+<a href="https://fig.io/plugins/other/zsh-open-pr_caarlos0-graveyard" target="_blank"><img src="https://fig.io/badges/install-with-fig.svg" /></a>
+
 ## Usage
 
 Just hit `git open-pr` on your repositories.
