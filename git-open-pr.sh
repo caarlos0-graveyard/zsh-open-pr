@@ -1,16 +1,19 @@
 #!/bin/sh
 _get_repo() {
-  echo "$1" | sed -e "s/.git$//" -e "s/.*github.com[:/]\(.*\)/\1/"
+  # shellcheck disable=SC2039
+  local repo_domain
+  repo_domain="$(echo "$1" | awk -F[/:] '{print $4}')"
+  echo "$1" | sed -e "s/.*$repo_domain[:/]\(.*\)/\1/"
 }
 
 _build_url() {
   # shellcheck disable=SC2039
   local upstream origin branch repo pr_url target
   upstream="$(git config --get remote.upstream.url)"
-  origin="$(git config --get remote.origin.url)"
+  origin="$(git config --get remote.origin.url | sed -e "s/.git$//")"
   branch="$(git symbolic-ref --short HEAD)"
   repo="$(_get_repo "$origin")"
-  pr_url="https://github.com/$repo/pull/new"
+  pr_url="$origin/pull/new"
   target="$1"
   test -z "$target" && target=$(git for-each-ref --format='%(upstream:short)' "$(git symbolic-ref -q HEAD)" | cut -d '/' -f 2)
   test -z "$target" && target="master"
